@@ -1,0 +1,12 @@
+clc;
+N = input('Enter the length of filter: ');
+wc = input ('Enter the digital cut off frequency: ');
+hn = fir1(N-1,wc/pi);
+disp('Filter Coefficients of FIR filter: ');
+disp(hn);
+figure(1);
+freqz(hn);
+[M,w] = freqz(hn);
+m = abs(M);
+figure(2);
+plot(w/pi,m);

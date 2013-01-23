@@ -1,0 +1,14 @@
+n = 0:19;
+x = cos(.1 * pi * n);
+figure(1);
+stem(n, x);
+title('Sinusoidal sequence of period 20 samples');
+X = fft(x, 100); figure(2);
+subplot(2, 1, 1);
+stem(abs(X));
+ylabel('Magnitude');    xlabel('Samples');
+title('Magnitude Spectrum');
+subplot(2,1,2);
+stem(angle(X));
+ylabel('Phase');    xlabel('Samples');
+title('Spectrum');

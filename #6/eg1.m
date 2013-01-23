@@ -1,0 +1,12 @@
+clc;
+clear all;
+close all;
+N = 2;
+wc = 3000;
+[num, den] = butter(N, wc, 'low', 's');
+fs = 10000;
+[b, a] = bilinear(num, den, fs);
+disp('Numerator coefficients are');
+disp(b);
+disp('Denominator coefficients are');
+disp(b);

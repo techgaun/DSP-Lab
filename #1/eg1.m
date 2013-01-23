@@ -1,0 +1,12 @@
+clc;
+B = 5;
+r = 2;
+t = -10:10;
+a = 1.5;
+expval = B * r.^t;
+decay = expval.*exp(-a*t);
+figure(1);
+plot(t, decay);
+grid;
+title('Exponential decay');
+xlabel('t');    ylabel('x(t)');

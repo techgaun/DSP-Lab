@@ -1,0 +1,13 @@
+clc;
+wp = 1500;
+ws = 1900;
+Fs = 10000;
+Wp = (2 * pi * wp)/Fs;
+Ws = (2 * pi * ws)/Fs;
+TB = Ws - Wp;
+n = (8 * pi)/TB;
+N = ceil(n);
+Wc = Wp + (TB/2);
+Wcn = Wc/pi;
+hn_lpf = fir1(N-1, Wcn);
+hn_hpf = fir1(N-1, Wcn, 'high');
